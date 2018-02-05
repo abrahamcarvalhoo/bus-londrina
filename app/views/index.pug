@@ -4,11 +4,19 @@ block content_top
   header.mdc-toolbar.mdc-toolbar--fixed
     .mdc-toolbar__row
       section.mdc-toolbar__section.mdc-toolbar__section--align-start
-        a.mdc-toolbar__menu-icon.material-icons(href="#") arrow_back
+        //- a.mdc-toolbar__menu-icon.material-icons arrow_back
         span.mdc-toolbar__title Linhas
+
+      section.mdc-toolbar__section.mat-search--desktop.mdc-ripple-surface
+        .mat-search--desktop__wrapper
+          form.searchform#searchform(role="search")
+            label.mat-search--desktop__icon.mat-search--desktop__content.material-icons(for="mat-search--desktop__input") search
+            input.mat-search--desktop__input.mat-search--desktop__content.mdc-typography(type="text" placeholder="Buscar" ng-model="search")
+            a.mat-search--desktop__icon.mat-search--clean.material-icons(ng-click="search = ''" ng-show="search") close
+
       section.mdc-toolbar__section.mdc-toolbar__section--align-end(role="toolbar")
-        a.mdc-toolbar__icon.material-icons(href="#") search
-        a.mdc-toolbar__icon.material-icons.toggle(href="#") more_vert
+        a.mdc-toolbar__icon.mat-search--mobile.mat-toolbar--open-search.material-icons search
+        a.mdc-toolbar__icon.material-icons.toggleMenu more_vert
         .mdc-menu-anchor
           .mdc-simple-menu#menu(tabindex="-1")
             .mdc-simple-menu__items.mdc-list(role="menu" aria-hidden="true")
@@ -16,10 +24,19 @@ block content_top
               li.mdc-list-item(role="menuitem" tabindex="0") Forward
               li.mdc-list-item(role="menuitem" tabindex="0") Reload
 
+  header.mdc-toolbar.mdc-toolbar--fixed.mat-toolbar--search
+    .mdc-toolbar__row.mat-toolbar--search-container
+      section.mdc-toolbar__section.mdc-toolbar__section--align-start
+        a.mdc-toolbar__menu-icon.mat-toolbar--exit-search.material-icons(ng-click="search = ''") arrow_back
+        .mdc-text-field.mdc-text-field--fullwidth
+          form.searchform#searchform(role="search")
+            input.mdc-text-field__input.mat-toolbar--search-text.mdc-typography(type="text" placeholder="Buscar" ng-model="search")
+            a.mat-search--mobile__icon.material-icons(ng-click="search = ''" ng-show="search") close
+
 block main
   .mdc-theme--dark
     ul.mdc-list.mdc-list--two-line
-      li.mdc-list-item(ng-repeat="(key, item) in items | filter:query")
+      li.mdc-list-item(ng-repeat="(key, item) in itemsFiltered = (items | filter:search:ignoreAccents)")
         span.mdc-list-item__text {{ item.title }}
           span.mdc-list-item__secondary-text {{ item.description }}
         span.mdc-list-item__meta.material-icons chevron_right
