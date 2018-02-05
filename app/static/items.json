@@ -1,0 +1,770 @@
+[
+  {
+    "id": "100",
+    "title": "100",
+    "type": "Convencional",
+    "description": "JD. ALEMANHA - TC"
+  },
+  {
+    "id": "101",
+    "title": "101",
+    "type": "Convencional",
+    "description": "JARDIM NOVO AMPARO"
+  },
+  {
+    "id": "102",
+    "title": "102",
+    "type": "Convencional",
+    "description": "JARDIM IDEAL"
+  },
+  {
+    "id": "103",
+    "title": "103",
+    "type": "Convencional",
+    "description": "JARDIM SANTA FE"
+  },
+  {
+    "id": "104",
+    "title": "104",
+    "type": "Convencional",
+    "description": "JD. INTERLAGOS"
+  },
+  {
+    "id": "105",
+    "title": "105",
+    "type": "Convencional",
+    "description": "JARDIM SAO PEDRO"
+  },
+  {
+    "id": "106",
+    "title": "106",
+    "type": "Convencional",
+    "description": "CJ. GUILHERME PIRES"
+  },
+  {
+    "id": "107",
+    "title": "107",
+    "type": "Convencional",
+    "description": "JARDIM ARAGARÇA"
+  },
+  {
+    "id": "108",
+    "title": "108",
+    "type": "Convencional",
+    "description": "JARDIM ALBATROZ"
+  },
+  {
+    "id": "109",
+    "title": "109",
+    "type": "Convencional",
+    "description": "RODOVIÁRIA"
+  },
+  {
+    "id": "110",
+    "title": "110",
+    "type": "Convencional",
+    "description": "MISTER THOMAS"
+  },
+  {
+    "id": "111",
+    "title": "111",
+    "type": "Convencional",
+    "description": "CJ. EUCALIPTOS"
+  },
+  {
+    "id": "112",
+    "title": "112",
+    "type": "Convencional",
+    "description": "ALEXANDRE URBANAS"
+  },
+  {
+    "id": "113",
+    "title": "113",
+    "type": "Convencional",
+    "description": "PIONEIROS"
+  },
+  {
+    "id": "121",
+    "title": "121",
+    "type": "Convencional",
+    "description": "TRÊS FIGUEIRAS"
+  },
+  {
+    "id": "200",
+    "title": "200",
+    "type": "Convencional",
+    "description": "VILA BRASIL"
+  },
+  {
+    "id": "201",
+    "title": "201",
+    "type": "Convencional",
+    "description": "JARDIM CALIFÓRNIA"
+  },
+  {
+    "id": "206",
+    "title": "206",
+    "type": "Convencional",
+    "description": "JARDIM EUROPA"
+  },
+  {
+    "id": "208",
+    "title": "208",
+    "type": "Convencional",
+    "description": "VILA HIGIENÓPOLIS"
+  },
+  {
+    "id": "209",
+    "title": "209",
+    "type": "Convencional",
+    "description": "JARDIM CLAUDIA"
+  },
+  {
+    "id": "211",
+    "title": "211",
+    "type": "Convencional",
+    "description": "PATRIMÔNIO REGINA"
+  },
+  {
+    "id": "213",
+    "title": "213",
+    "type": "Convencional",
+    "description": "SHOPING CATUAÍ"
+  },
+  {
+    "id": "217",
+    "title": "217",
+    "type": "Convencional",
+    "description": "CJ. VIVENDAS DO ARVOREDO"
+  },
+  {
+    "id": "220",
+    "title": "220",
+    "type": "Convencional",
+    "description": "EMAUS"
+  },
+  {
+    "id": "221",
+    "title": "221",
+    "type": "Convencional",
+    "description": "LIMOEIRO"
+  },
+  {
+    "id": "223",
+    "title": "223",
+    "type": "Convencional",
+    "description": "CANAÃ"
+  },
+  {
+    "id": "224",
+    "title": "224",
+    "type": "Convencional",
+    "description": "SONORA"
+  },
+  {
+    "id": "225",
+    "title": "225",
+    "type": "Convencional",
+    "description": "PITÁGORAS-SHOP.CATUAÍ"
+  },
+  {
+    "id": "227",
+    "title": "227",
+    "type": "Convencional",
+    "description": "JD.BOTÂNICO"
+  },
+  {
+    "id": "229",
+    "title": "229",
+    "type": "Convencional",
+    "description": "PALHANO"
+  },
+  {
+    "id": "230",
+    "title": "230",
+    "type": "Convencional",
+    "description": "DIRETO UNOPAR PITÁGORAS"
+  },
+  {
+    "id": "231",
+    "title": "231",
+    "type": "Convencional",
+    "description": "PEQUENA LONDRES"
+  },
+  {
+    "id": "232",
+    "title": "232",
+    "type": "Convencional",
+    "description": "DIRETO UNIFIL"
+  },
+  {
+    "id": "233",
+    "title": "233",
+    "type": "Convencional",
+    "description": "PGD"
+  },
+  {
+    "id": "250",
+    "title": "250",
+    "type": "Convencional",
+    "description": "SÃO LUIZ"
+  },
+  {
+    "id": "300",
+    "title": "300",
+    "type": "Convencional",
+    "description": "T.R.OESTE - CENTRO"
+  },
+  {
+    "id": "301",
+    "title": "301",
+    "type": "Convencional",
+    "description": "JARDIM PRESIDENTE"
+  },
+  {
+    "id": "302",
+    "title": "302",
+    "type": "Convencional",
+    "description": "JARDIM HEDY"
+  },
+  {
+    "id": "303",
+    "title": "303",
+    "type": "Convencional",
+    "description": "JARDIM TOKIO"
+  },
+  {
+    "id": "305",
+    "title": "305",
+    "type": "Convencional",
+    "description": "CAMPUS"
+  },
+  {
+    "id": "306",
+    "title": "306",
+    "type": "Convencional",
+    "description": "CIDADE UNIVERSITÁRIA"
+  },
+  {
+    "id": "307",
+    "title": "307",
+    "type": "Convencional",
+    "description": "CJ. AVELINO VIEIRA"
+  },
+  {
+    "id": "308",
+    "title": "308",
+    "type": "Convencional",
+    "description": "JARDIM BANDEIRANTES"
+  },
+  {
+    "id": "309",
+    "title": "309",
+    "type": "Convencional",
+    "description": "PQ. GOV. N.BRAGA"
+  },
+  {
+    "id": "310",
+    "title": "310",
+    "type": "Convencional",
+    "description": "JARDIM DO SOL"
+  },
+  {
+    "id": "311",
+    "title": "311",
+    "type": "Convencional",
+    "description": "JARDIM SANTA RITA"
+  },
+  {
+    "id": "312",
+    "title": "312",
+    "type": "Convencional",
+    "description": "JARDIM STA  MADALENA"
+  },
+  {
+    "id": "313",
+    "title": "313",
+    "type": "Convencional",
+    "description": "JARDIM MARIA LUCIA"
+  },
+  {
+    "id": "314",
+    "title": "314",
+    "type": "Convencional",
+    "description": "JARDIM OLIMPICO"
+  },
+  {
+    "id": "315",
+    "title": "315",
+    "type": "Convencional",
+    "description": "COLUMBIA"
+  },
+  {
+    "id": "316",
+    "title": "316",
+    "type": "Convencional",
+    "description": "JD. LEONOR"
+  },
+  {
+    "id": "317",
+    "title": "317",
+    "type": "Convencional",
+    "description": "JD.MARACANA-TC"
+  },
+  {
+    "id": "934C",
+    "title": "34C",
+    "type": "Convencional",
+    "description": "INTERCLICINICAS HC/UEL - COB"
+  },
+  {
+    "id": "350",
+    "title": "350",
+    "type": "Convencional",
+    "description": "EXPRESSO T.R.OESTE - T. CENTRAL"
+  },
+  {
+    "id": "351",
+    "title": "351",
+    "type": "Convencional",
+    "description": "PARADOR TRO - TERMINAO OESTE - TC TERMINA"
+  },
+  {
+    "id": "400",
+    "title": "400",
+    "type": "Convencional",
+    "description": "CJ. PARIGOT DE SOUZA"
+  },
+  {
+    "id": "401",
+    "title": "401",
+    "type": "Convencional",
+    "description": "CJ CHEFE NEWTON"
+  },
+  {
+    "id": "402",
+    "title": "402",
+    "type": "Convencional",
+    "description": "CONJ. VIVI XAVIER"
+  },
+  {
+    "id": "403",
+    "title": "403",
+    "type": "Convencional",
+    "description": "CJ. RUY VIRMOND CARNASCIALLI"
+  },
+  {
+    "id": "404",
+    "title": "404",
+    "type": "Convencional",
+    "description": "CONJ. HEIMTAL"
+  },
+  {
+    "id": "405",
+    "title": "405",
+    "type": "Convencional",
+    "description": "CJ. MARIA CECÍLIA"
+  },
+  {
+    "id": "406",
+    "title": "406",
+    "type": "Convencional",
+    "description": "CJ. AQUILES STENGUEL"
+  },
+  {
+    "id": "407",
+    "title": "407",
+    "type": "Convencional",
+    "description": "CONJ. JOÃO PAZ"
+  },
+  {
+    "id": "408",
+    "title": "408",
+    "type": "Convencional",
+    "description": "VILA RECREIO"
+  },
+  {
+    "id": "409",
+    "title": "409",
+    "type": "Convencional",
+    "description": "VILA YARA"
+  },
+  {
+    "id": "410",
+    "title": "410",
+    "type": "Convencional",
+    "description": "VILA NOVA"
+  },
+  {
+    "id": "411",
+    "title": "411",
+    "type": "Convencional",
+    "description": "JARDIM PARAISO"
+  },
+  {
+    "id": "412",
+    "title": "412",
+    "type": "Convencional",
+    "description": "CJ.HILDA MANDARINO"
+  },
+  {
+    "id": "413",
+    "title": "413",
+    "type": "Convencional",
+    "description": "RESIDENCIAL DO CAFÉ"
+  },
+  {
+    "id": "414",
+    "title": "414",
+    "type": "Convencional",
+    "description": "NOVA OLINDA"
+  },
+  {
+    "id": "415",
+    "title": "415",
+    "type": "Convencional",
+    "description": "CONJ. ITAPOA"
+  },
+  {
+    "id": "416",
+    "title": "416",
+    "type": "Convencional",
+    "description": "CJ. FARID LIBOS"
+  },
+  {
+    "id": "417",
+    "title": "417",
+    "type": "Convencional",
+    "description": "JARDIM CATUAI"
+  },
+  {
+    "id": "418",
+    "title": "418",
+    "type": "Convencional",
+    "description": "JD.PRIMAVERA"
+  },
+  {
+    "id": "419",
+    "title": "419",
+    "type": "Convencional",
+    "description": "JD. PORTO SEGURO"
+  },
+  {
+    "id": "420",
+    "title": "420",
+    "type": "Convencional",
+    "description": "T.VIVI XAVIER / SHOP. LONDRINA NORTE"
+  },
+  {
+    "id": "422",
+    "title": "422",
+    "type": "Convencional",
+    "description": "CJ MARIA CELINA"
+  },
+  {
+    "id": "423",
+    "title": "423",
+    "type": "Convencional",
+    "description": "CJ.SÃO JORGE"
+  },
+  {
+    "id": "424",
+    "title": "424",
+    "type": "Convencional",
+    "description": "MARISTELA"
+  },
+  {
+    "id": "425",
+    "title": "425",
+    "type": "Convencional",
+    "description": "COMERCIAL NORTE"
+  },
+  {
+    "id": "426",
+    "title": "426",
+    "type": "Convencional",
+    "description": "JARDIM PARIS"
+  },
+  {
+    "id": "427",
+    "title": "427",
+    "type": "Convencional",
+    "description": "WARTA - VIVI XAVIER"
+  },
+  {
+    "id": "428",
+    "title": "428",
+    "type": "Convencional",
+    "description": "VISTA BELA"
+  },
+  {
+    "id": "429",
+    "title": "429",
+    "type": "Convencional",
+    "description": "JD. PAULISTA"
+  },
+  {
+    "id": "444",
+    "title": "444",
+    "type": "Convencional",
+    "description": "WARTA"
+  },
+  {
+    "id": "445",
+    "title": "445",
+    "type": "Convencional",
+    "description": "JD. FELICIDADE"
+  },
+  {
+    "id": "446",
+    "title": "446",
+    "type": "Convencional",
+    "description": "SHOP.NORTE"
+  },
+  {
+    "id": "501",
+    "title": "501",
+    "type": "Convencional",
+    "description": "PARADOR VIVI XAVIER - TC"
+  },
+  {
+    "id": "502",
+    "title": "502",
+    "type": "Convencional",
+    "description": "PARADOR OURO VERDE - TC"
+  },
+  {
+    "id": "503",
+    "title": "503",
+    "type": "Convencional",
+    "description": "RÁPIDO AQUILES - CENTRO"
+  },
+  {
+    "id": "504",
+    "title": "504",
+    "type": "Convencional",
+    "description": "PARADOR M.  GAVETTI - TC"
+  },
+  {
+    "id": "505",
+    "title": "505",
+    "type": "Convencional",
+    "description": "EXPRESSO VIVI  XAVIER - TC"
+  },
+  {
+    "id": "506",
+    "title": "506",
+    "type": "Convencional",
+    "description": "RAPIDO VIOLIM - MARIA CECÍLIA"
+  },
+  {
+    "id": "512",
+    "title": "512",
+    "type": "Convencional",
+    "description": "EXPRESSO OURO VERDE"
+  },
+  {
+    "id": "601",
+    "title": "601",
+    "type": "Convencional",
+    "description": "PARADOR ACAPULCO - TC"
+  },
+  {
+    "id": "605",
+    "title": "605",
+    "type": "Convencional",
+    "description": "EXP TERM. ACAPULCO/ TC"
+  },
+  {
+    "id": "Z611",
+    "title": "611",
+    "type": "PSIU",
+    "description": "SANTA.RITA / H.U."
+  },
+  {
+    "id": "Z613",
+    "title": "613",
+    "type": "PSIU",
+    "description": "SHOPPING CATUAI"
+  },
+  {
+    "id": "Z623",
+    "title": "623",
+    "type": "PSIU",
+    "description": "5CJ / EVANGÉLICO"
+  },
+  {
+    "id": "800",
+    "title": "800",
+    "type": "Convencional",
+    "description": "VIVI XAVIER - ACAPULCO"
+  },
+  {
+    "id": "801",
+    "title": "801",
+    "type": "Convencional",
+    "description": "VIVI XAVIER - T.GAVETTI - CENTRO CÍVICO"
+  },
+  {
+    "id": "802",
+    "title": "802",
+    "type": "Convencional",
+    "description": "VIVI XAVIER - AV. BANDEIRANTES"
+  },
+  {
+    "id": "803",
+    "title": "803",
+    "type": "Convencional",
+    "description": "VIVI XAVIER - SHOPPING CATUAI"
+  },
+  {
+    "id": "806",
+    "title": "806",
+    "type": "Convencional",
+    "description": "SAUL ELKIND - SHOPPING CATUAI"
+  },
+  {
+    "id": "807",
+    "title": "807",
+    "type": "Convencional",
+    "description": "TRO/SAN.F - DIAMETRAL TRO - SAN FERNANDO"
+  },
+  {
+    "id": "808",
+    "title": "808",
+    "type": "Convencional",
+    "description": "BAND/ HU J- DIAMETRAL BANDEIRANTES-HU"
+  },
+  {
+    "id": "809",
+    "title": "809",
+    "type": "Convencional",
+    "description": "UEL - HU"
+  },
+  {
+    "id": "810",
+    "title": "810",
+    "type": "Convencional",
+    "description": "SÃO JOÃO - TIRADENTES"
+  },
+  {
+    "id": "830",
+    "title": "830",
+    "type": "Convencional",
+    "description": "FAC.PITÁGORAS - VIVI XAVIER"
+  },
+  {
+    "id": "834",
+    "title": "834",
+    "type": "Convencional",
+    "description": "PITÁGORAS - MILTON GAVETTI"
+  },
+  {
+    "id": "835",
+    "title": "835",
+    "type": "Convencional",
+    "description": "U.E.L- MILTON GAVETTI"
+  },
+  {
+    "id": "900",
+    "title": "900",
+    "type": "Convencional",
+    "description": "VIVI XAVIER - H.U. (HOSPITAL UNIVERSITAR"
+  },
+  {
+    "id": "901",
+    "title": "901",
+    "type": "Convencional",
+    "description": "PERIMETRAL 5 CJ. / CACIQUE (V.T VIV-COB."
+  },
+  {
+    "id": "902",
+    "title": "902",
+    "type": "Convencional",
+    "description": "MARITACAS / SAUL ELKIND"
+  },
+  {
+    "id": "903",
+    "title": "903",
+    "type": "Convencional",
+    "description": "CIRCULAR - TC - CENTRO"
+  },
+  {
+    "id": "904",
+    "title": "904",
+    "type": "Convencional",
+    "description": "PER/S.LOURENÇO/SABARÁ"
+  },
+  {
+    "id": "905",
+    "title": "905",
+    "type": "Convencional",
+    "description": "TERMINAL ACAPULCO - H. U"
+  },
+  {
+    "id": "906",
+    "title": "906",
+    "type": "Convencional",
+    "description": "COLUMBIA-SHOPPING CATUAÍ"
+  },
+  {
+    "id": "909",
+    "title": "909",
+    "type": "Convencional",
+    "description": "PERNAMBUCO - ANEL CENTRAL"
+  },
+  {
+    "id": "931",
+    "title": "931",
+    "type": "Convencional",
+    "description": "TRO/LONORTE - T.R.OESTE - LONDRINA NORTE"
+  },
+  {
+    "id": "932",
+    "title": "932",
+    "type": "Convencional",
+    "description": "TVX / TRO - T. VIVI XAVIER - T. R. OESTE"
+  },
+  {
+    "id": "933",
+    "title": "933",
+    "type": "Convencional",
+    "description": "T.V.XAVIER / UEL / SHOPPING CATUAI"
+  },
+  {
+    "id": "951",
+    "title": "951",
+    "type": "Convencional",
+    "description": "PARIGOT"
+  },
+  {
+    "id": "952",
+    "title": "952",
+    "type": "Convencional",
+    "description": "PARQUE WALDEMAR HAUER"
+  },
+  {
+    "id": "953",
+    "title": "953",
+    "type": "Convencional",
+    "description": "CORUJÃO AQUILES"
+  },
+  {
+    "id": "956",
+    "title": "956",
+    "type": "Convencional",
+    "description": "CORUJÃO G.PIRES"
+  },
+  {
+    "id": "957",
+    "title": "957",
+    "type": "Convencional",
+    "description": "CORUJÃO AVELINO"
+  },
+  {
+    "id": "959",
+    "title": "959",
+    "type": "Convencional",
+    "description": "JARDIM SÃO FRANCISCO"
+  }
+]

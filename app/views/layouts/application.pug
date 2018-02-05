@@ -1,5 +1,5 @@
 doctype html
-html(lang="pt-br" itemscope itemtype="http://schema.org/WebPage")
+html(lang="pt-br" itemscope itemtype="http://schema.org/WebPage" ng-app="MainApp")
   head
     block head
     meta(charset="utf-8")
@@ -52,6 +52,7 @@ html(lang="pt-br" itemscope itemtype="http://schema.org/WebPage")
     meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
     meta(name="skype_toolbar", content="skype_toolbar_parser_compatible")
 
+    link(href="https://fonts.googleapis.com/css?family=Roboto", rel="stylesheet")
     link(href="assets/stylesheets/application.css", rel="stylesheet")
     script(type="application/ld+json").
       {
@@ -61,10 +62,10 @@ html(lang="pt-br" itemscope itemtype="http://schema.org/WebPage")
         "alternateName": "#{title}",
         "url": "#{site_url}"
       }
-  body
+  body.mdc-typography(ng-controller="MainCtrl")
     block content_top
 
-    main.main
+    main.mdc-toolbar-fixed-adjust
       block main
 
     block content_bottom

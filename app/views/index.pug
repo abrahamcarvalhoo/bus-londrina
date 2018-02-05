@@ -1,7 +1,25 @@
 extends /layouts/application
 
 block content_top
+  header.mdc-toolbar.mdc-toolbar--fixed
+    .mdc-toolbar__row
+      section.mdc-toolbar__section.mdc-toolbar__section--align-start
+        a.mdc-toolbar__menu-icon.material-icons(href="#") arrow_back
+        span.mdc-toolbar__title Linhas
+      section.mdc-toolbar__section.mdc-toolbar__section--align-end(role="toolbar")
+        a.mdc-toolbar__icon.material-icons(href="#") search
+        a.mdc-toolbar__icon.material-icons.toggle(href="#") more_vert
+        .mdc-menu-anchor
+          .mdc-simple-menu#menu(tabindex="-1")
+            .mdc-simple-menu__items.mdc-list(role="menu" aria-hidden="true")
+              li.mdc-list-item(role="menuitem" tabindex="0") Back
+              li.mdc-list-item(role="menuitem" tabindex="0") Forward
+              li.mdc-list-item(role="menuitem" tabindex="0") Reload
 
 block main
-
-block content_bottom
+  .mdc-theme--dark
+    ul.mdc-list.mdc-list--two-line
+      li.mdc-list-item(ng-repeat="(key, item) in items | filter:query")
+        span.mdc-list-item__text {{ item.title }}
+          span.mdc-list-item__secondary-text {{ item.description }}
+        span.mdc-list-item__meta.material-icons chevron_right
