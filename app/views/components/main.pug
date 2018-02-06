@@ -1,0 +1,32 @@
+header.mdc-toolbar.mdc-toolbar--fixed
+  .mdc-toolbar__row
+    section.mdc-toolbar__section.mdc-toolbar__section--align-start
+      a.mdc-toolbar__menu-icon.material-icons(href="/") directions_bus
+      span.mdc-toolbar__title Linhas
+
+    section.mdc-toolbar__section.mat-search--desktop.mdc-ripple-surface
+      .mat-search--desktop__wrapper
+        form.searchform#searchform(role="search")
+          label.mat-search--desktop__icon.mat-search--desktop__content.material-icons(for="mat-search--desktop__input") search
+          input.mat-search--desktop__input.mat-search--desktop__content.mdc-typography(type="text" placeholder="Buscar" ng-model="search")
+          .mat-search--desktop__icon.mat-search--clean.material-icons(ng-click="search = ''" ng-show="search") close
+
+    section.mdc-toolbar__section.mdc-toolbar__section--align-end(role="toolbar")
+      .mdc-toolbar__icon.mat-search--mobile.mat-toolbar--open-search.material-icons search
+
+header.mdc-toolbar.mdc-toolbar--fixed.mat-toolbar--search
+  .mdc-toolbar__row.mat-toolbar--search-container
+    section.mdc-toolbar__section.mdc-toolbar__section--align-start
+      .mdc-toolbar__menu-icon.mat-toolbar--exit-search.material-icons(ng-click="search = ''") arrow_back
+      .mdc-text-field.mdc-text-field--fullwidth
+        form.searchform#searchform(role="search")
+          input.mdc-text-field__input.mat-toolbar--search-text.mdc-typography(type="text" placeholder="Buscar" ng-model="search")
+          .mat-search--mobile__icon.material-icons(ng-click="search = ''" ng-show="search") close
+
+main.mdc-toolbar-fixed-adjust
+  .mdc-theme--dark
+    .list-main.mdc-list.mdc-list--two-line
+      a.mdc-list-item(ng-repeat="(key, item) in itemsFiltered = (items | filter:search:ignoreAccents)" href="/#!/item/{{item.id}}?title={{item.title}}&description={{item.description}}")
+          span.mdc-list-item__text {{ item.title }}
+          span.mdc-list-item__secondary-text {{ item.description }}
+          span.mdc-list-item__meta.material-icons chevron_right

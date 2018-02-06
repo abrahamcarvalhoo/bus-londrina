@@ -63,12 +63,7 @@ html(lang="pt-br" itemscope itemtype="http://schema.org/WebPage" ng-app="MainApp
         "url": "#{site_url}"
       }
   body.mdc-typography(ng-controller="MainCtrl")
-    block content_top
-
-    main.mdc-toolbar-fixed-adjust
-      block main
-
-    block content_bottom
+    div(ng-view)
 
     if production == "false"
       script(src="assets/javascripts/requirements.js")

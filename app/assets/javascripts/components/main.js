@@ -1,8 +1,22 @@
 var app = angular.module('MainApp', ['ngRoute', 'infinite-scroll']);
 
+app.config(function($routeProvider) {
+  $routeProvider
+  .when('/', {
+    templateUrl: 'components/main.html',
+    controller: 'MainCtrl'
+  })
+  .when('/item/:id', {
+    templateUrl: 'components/item.html',
+    controller: 'ItemCtrl'
+  })
+  .otherwise({ redirectTo: '/' });
+});
+
 app.controller('MainCtrl', function($scope, $http) {
   $scope.saved = localStorage.getItem('items');
   $scope.items = (localStorage.getItem('items') !== null) ? JSON.parse($scope.saved) : addItems($http);
+  materialInit();
 
   $scope.ignoreAccents = function(item) {
     if (angular.isObject(item)) return false;
@@ -10,6 +24,10 @@ app.controller('MainCtrl', function($scope, $http) {
     var search = removeAccents(angular.lowercase('' + $scope.search));
     return text.indexOf(search) > -1;
   };
+});
+
+app.controller('ItemCtrl', function($scope, $route) {
+  $scope.params = $route.current.params;
 });
 
 function addItems($http) {
