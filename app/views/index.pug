@@ -35,8 +35,8 @@ block content_top
 
 block main
   .mdc-theme--dark
-    ul.mdc-list.mdc-list--two-line
+    ul.list-home.mdc-list.mdc-list--two-line
       li.mdc-list-item(ng-repeat="(key, item) in itemsFiltered = (items | filter:search:ignoreAccents)")
         span.mdc-list-item__text {{ item.title }}
-          span.mdc-list-item__secondary-text {{ item.description }}
+        span.mdc-list-item__secondary-text {{ item.description }}
         span.mdc-list-item__meta.material-icons chevron_right
