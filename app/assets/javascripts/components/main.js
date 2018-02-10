@@ -3,11 +3,11 @@ var app = angular.module('MainApp', ['ngRoute', 'infinite-scroll']);
 app.config(function($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'components/main.html',
+    templateUrl: '/components/main.html',
     controller: 'MainCtrl'
   })
   .when('/item/:id', {
-    templateUrl: 'components/item.html',
+    templateUrl: '/components/item.html',
     controller: 'ItemCtrl'
   })
   .otherwise({ redirectTo: '/' });
@@ -18,6 +18,8 @@ app.controller('MainCtrl', function($scope, $http) {
   $scope.items = (localStorage.getItem('items') !== null) ? JSON.parse($scope.saved) : addItems($http);
 
   materialInit();
+  clearRoutes();
+  clearMarkers();
   clearInterval(interval);
 
   $scope.ignoreAccents = function(item) {
@@ -33,6 +35,7 @@ app.controller('ItemCtrl', function($scope, $route) {
 
   initMap();
   getUserPosition();
+  getRoutes($scope.params.id);
   getPosition($scope.params.id);
   interval = setInterval('getPosition('+$scope.params.id+')', 15000);
 });
@@ -43,7 +46,6 @@ function addItems($http) {
     url: '/items.json'
   }).then(function(response) {
     localStorage.setItem('items', JSON.stringify(response.data));
-    window.location.reload();
   }, function(error) {
     console.log(error, 'can not get data.');
   });

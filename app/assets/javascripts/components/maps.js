@@ -102,22 +102,38 @@ function initMap() {
 
 function getPosition(id) {
   $.ajax({
-    url: 'http://grandelondrina.rf.gd/buscamapa.php',
+    url: '/buscamapa.php',
     type: 'GET',
     dataType: 'jsonp',
+    data: { idLinha: id },
     contentType: 'application/json; charset=utf-8',
-    data: { idLinha: id }
   }).done(function(response) {
     var response = response.cordenadas.split('&');
 
     if (response.length >= 5) {
-      if (markers) {
-        clearOverlays(markers);
-      }
+      clearMarkers(markers);
       renderPosition(response);
-      renderRoutes(response);
-    } else {}
+    } else {
+      console.log('error');
+    }
   });
+}
+
+function getUserPosition() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      markerUser = new google.maps.Marker({
+        map: map,
+        icon: icon_user,
+        title: 'Estou Aqui',
+        position: userPosition,
+      });
+      map.setZoom(15);
+      map.setCenter(userPosition);
+    });
+  }
 }
 
 function renderPosition(response) {
@@ -138,30 +154,72 @@ function renderPosition(response) {
   }
 }
 
-function renderRoutes(response) {}
+function getRoutes(id) {
+  $.ajax({
+    url: '/buscalinhas.php',
+    type: 'GET',
+    dataType: 'jsonp',
+    data: { linha: id },
+    contentType: 'application/json; charset=utf-8',
+  }).done(function(response) {
+    $.each(response, function (index, record) {
+      var obj = response[index];
 
-function getUserPosition() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      for (var key in obj) {
+        i = 0;
+        go = 0;
+        back = 0;
 
-      markerUser = new google.maps.Marker({
-        map: map,
-        icon: icon_user,
-        title: 'Estou Aqui',
-        position: userPosition,
+        if (obj[key].Sentido == 0) {
+          if (key != go && key < obj.length) {
+            routesGo.push(new google.maps.LatLng(obj[key].Lat, obj[key].Lng));
+          }
+          go = i + 1;
+        } else {
+          routesBack.push(new google.maps.LatLng(obj[key].Lat, obj[key].Lng));
+          back = i + 1;
+        }
+        i++;
+      }
+
+      var polylineGo = new google.maps.Polyline({
+        path: routesGo,
+        strokeWeight: 3,
+        strokeOpacity: '1.0',
+        strokeColor: '#0000FF'
       });
-      map.setZoom(15);
-      map.setCenter(userPosition);
+      routesPath.push(polylineGo);
+
+      var polylineBack = new google.maps.Polyline({
+        strokeWeight: 3,
+        path: routesBack,
+        strokeOpacity: '1.0',
+        strokeColor: '#000000'
+      });
+      routesPath.push(polylineBack);
+
+      polylineGo.setMap(map);
+      polylineBack.setMap(map);
     });
-  }
+  });
 }
 
-function clearOverlays(markers) {
+function clearMarkers(markers) {
   if (markers) {
     for (i in markers) {
       markers[i].setMap(null);
     }
     markers = [];
+  }
+}
+
+function clearRoutes() {
+  if (routesPath) {
+    for (var i = 0; i < routesPath.length; i++) {
+      routesPath[i].setMap(null);
+    }
+    routesPath = [];
+    routesGo = new Array();
+    routesBack = new Array();
   }
 }
