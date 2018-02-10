@@ -104,7 +104,6 @@ gulp.task('scripts', function() {
   .pipe($.plumber({errorHandler: onError}))
   .pipe($.include({includePaths: [path.base.vendors, path.base.scripts]}))
   .pipe($.if(options.production, $.concat('application.js')))
-  .pipe($.if(options.production, $.uglify()))
   .pipe(gulp.dest(path.dist.scripts))
   .pipe(browsersync.stream());
 });
