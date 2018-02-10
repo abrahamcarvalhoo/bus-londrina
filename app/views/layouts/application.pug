@@ -63,7 +63,10 @@ html(lang="pt-br" itemscope itemtype="http://schema.org/WebPage" ng-app="MainApp
         "url": "#{site_url}"
       }
   body.mdc-typography(ng-controller="MainCtrl")
+
     div(ng-view)
+
+    script(async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZQmoK2K9mC45ayZz2Z0lSbSPyaVqMdkI")
 
     if production == "false"
       script(src="assets/javascripts/requirements.js")

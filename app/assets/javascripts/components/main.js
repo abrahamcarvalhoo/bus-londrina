@@ -16,7 +16,9 @@ app.config(function($routeProvider) {
 app.controller('MainCtrl', function($scope, $http) {
   $scope.saved = localStorage.getItem('items');
   $scope.items = (localStorage.getItem('items') !== null) ? JSON.parse($scope.saved) : addItems($http);
+
   materialInit();
+  clearInterval(interval);
 
   $scope.ignoreAccents = function(item) {
     if (angular.isObject(item)) return false;
@@ -26,8 +28,13 @@ app.controller('MainCtrl', function($scope, $http) {
   };
 });
 
-app.controller('ItemCtrl', function($scope, $route) {
+app.controller('ItemCtrl', function($scope, $route, $http) {
   $scope.params = $route.current.params;
+
+  initMap();
+  getUserPosition();
+  getPosition($scope.params.id, $http);
+  interval = setInterval('getPosition('+$scope.params.id+', '+$http+')', 15000);
 });
 
 function addItems($http) {
