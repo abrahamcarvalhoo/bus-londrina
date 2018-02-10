@@ -1,11 +1,12 @@
 <?php
 $url = 'http://site.tcgrandelondrina.com.br:8082/soap/buscamapa';
+$idLinha = '';
 
-if (isset($_GET['id'])) {
-  $id = $_GET['id'];
+if (isset($_GET['idLinha'])) {
+  $idLinha = $_GET['idLinha'];
 }
 
-$data = array('idLinha' => $id);
+$data = array('idLinha' => $idLinha);
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_POST, true);

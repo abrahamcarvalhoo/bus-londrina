@@ -1,24 +1,27 @@
 var map;
 var interval;
 var markers = [];
+var routesPath = [];
+var routesCoord = [];
+var routesGo = new Array();
+var routesBack = new Array();
 var icon_bus = '/assets/images/icons/bus.png';
 var icon_user = '/assets/images/icons/user.png';
 var icon_terminal = '/assets/images/icons/terminal.png';
 
 function initMap() {
   var infoWindow = new google.maps.InfoWindow();
-  var londrinaPosition = new google.maps.LatLng(-23.304452, -51.169582);
-  var centroPosition = new google.maps.LatLng(-23.308385, -51.160897);
+  var centralPosition = new google.maps.LatLng(-23.308385, -51.160897);
   var vivixavierPosition = new google.maps.LatLng(-23.260688, -51.172643);
   var gavettiPosition = new google.maps.LatLng(-23.281622, -51.152574);
   var acapulcoPosition = new google.maps.LatLng(-23.360432, -51.155230);
   var catuaiPosition = new google.maps.LatLng(-23.343636, -51.185976);
   var ouroverdePosition = new google.maps.LatLng(-23.281607, -51.171774);
   var mapOptions = {
-    zoom: 13,
+    zoom: 15,
     scaleControl: false,
     mapTypeControl: false,
-    center: londrinaPosition,
+    center: centralPosition,
     streetViewControl: false,
   }
 
@@ -28,7 +31,7 @@ function initMap() {
     map: map,
     icon: icon_terminal,
     title: 'Term. Central',
-    position: centroPosition,
+    position: centralPosition,
   });
 
   termCentral.addListener('click', function() {
@@ -97,33 +100,59 @@ function initMap() {
   });
 }
 
-function getPosition(id, $http) {
-  console.log('getPosition');
+function getPosition(id) {
+  $.ajax({
+    url: 'http://grandelondrina.rf.gd/buscamapa.php',
+    type: 'GET',
+    dataType: 'jsonp',
+    contentType: 'application/json; charset=utf-8',
+    data: { idLinha: id }
+  }).done(function(response) {
+    var response = response.cordenadas.split('&');
+
+    if (response.length >= 5) {
+      if (markers) {
+        clearOverlays(markers);
+      }
+      renderPosition(response);
+      renderRoutes(response);
+    } else {}
+  });
 }
 
 function renderPosition(response) {
-  console.log('renderPosition');
+  var marker;
+  var index = 1;
+  var infoWindow = new google.maps.InfoWindow();
+
+  while (index < response.length - 1) {
+    marker = new google.maps.Marker({
+      map: map,
+      icon: icon_bus,
+      title: response[index + 1],
+      position: new google.maps.LatLng(response[index + 2], response[index + 3])
+    });
+
+    index = index + 6;
+    markers.push(marker);
+  }
 }
+
+function renderRoutes(response) {}
 
 function getUserPosition() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var infoWindow = new google.maps.InfoWindow();
       var userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
       markerUser = new google.maps.Marker({
-        position: userPosition,
         map: map,
         icon: icon_user,
         title: 'Estou Aqui',
+        position: userPosition,
       });
       map.setZoom(15);
       map.setCenter(userPosition);
-
-      markerUser.addListener('click', function() {
-        infoWindow.setContent('Estou Aqui');
-        infoWindow.open(map, this);
-      });
     });
   }
 }
@@ -133,5 +162,6 @@ function clearOverlays(markers) {
     for (i in markers) {
       markers[i].setMap(null);
     }
+    markers = [];
   }
 }

@@ -26,7 +26,7 @@ header.mdc-toolbar.mdc-toolbar--fixed.mat-toolbar--search
 main.mdc-toolbar-fixed-adjust
   .mdc-theme--dark
     .list-main.mdc-list.mdc-list--two-line
-      a.mdc-list-item(ng-repeat="(key, item) in itemsFiltered = (items | filter:search:ignoreAccents)" href="/#!/item/{{item.id}}?title={{item.title}}&description={{item.description}}")
-          span.mdc-list-item__text {{ item.title }}
-          span.mdc-list-item__secondary-text {{ item.description }}
+      a.mdc-list-item(ng-repeat="(key, item) in items | filter:search:ignoreAccents" href="/#!/item/{{item.id}}?title={{item.title}}")
+          span.mdc-list-item__text {{ item.id }}
+          span.mdc-list-item__secondary-text {{ item.title }}
           span.mdc-list-item__meta.material-icons chevron_right

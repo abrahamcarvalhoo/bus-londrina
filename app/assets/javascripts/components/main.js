@@ -28,13 +28,13 @@ app.controller('MainCtrl', function($scope, $http) {
   };
 });
 
-app.controller('ItemCtrl', function($scope, $route, $http) {
+app.controller('ItemCtrl', function($scope, $route) {
   $scope.params = $route.current.params;
 
   initMap();
   getUserPosition();
-  getPosition($scope.params.id, $http);
-  interval = setInterval('getPosition('+$scope.params.id+', '+$http+')', 15000);
+  getPosition($scope.params.id);
+  interval = setInterval('getPosition('+$scope.params.id+')', 15000);
 });
 
 function addItems($http) {
