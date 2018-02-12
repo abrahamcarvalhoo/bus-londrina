@@ -9,8 +9,7 @@ self.addEventListener('install', function(e) {
         '/components/item.html',
         '/components/main.html',
         '/assets/javascripts/application.js',
-        '/assets/stylesheets/application.css',
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyDZQmoK2K9mC45ayZz2Z0lSbSPyaVqMdkI'
+        '/assets/stylesheets/application.css'
       ]).then(function() {
         return self.skipWaiting();
       });

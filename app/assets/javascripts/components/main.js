@@ -3,11 +3,11 @@ var app = angular.module('MainApp', ['ngRoute', 'infinite-scroll']);
 app.config(function($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: '/components/main.html',
+    templateUrl: 'components/main.html',
     controller: 'MainCtrl'
   })
   .when('/item/:id', {
-    templateUrl: '/components/item.html',
+    templateUrl: 'components/item.html',
     controller: 'ItemCtrl'
   })
   .otherwise({ redirectTo: '/' });
@@ -43,9 +43,10 @@ app.controller('ItemCtrl', function($scope, $route) {
 function addItems($http) {
   $http({
     method: 'get',
-    url: '/items.json'
+    url: 'items.json'
   }).then(function(response) {
     localStorage.setItem('items', JSON.stringify(response.data));
+    window.location.reload();
   }, function(error) {
     console.log(error, 'can not get data.');
   });

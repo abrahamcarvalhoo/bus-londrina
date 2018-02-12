@@ -5,9 +5,9 @@ var routesPath = [];
 var routesCoord = [];
 var routesGo = new Array();
 var routesBack = new Array();
-var icon_bus = '/assets/images/icons/bus.png';
-var icon_user = '/assets/images/icons/user.png';
-var icon_terminal = '/assets/images/icons/terminal.png';
+var icon_bus = 'assets/images/icons/bus.png';
+var icon_user = 'assets/images/icons/user.png';
+var icon_terminal = 'assets/images/icons/terminal.png';
 
 function initMap() {
   var infoWindow = new google.maps.InfoWindow();
@@ -24,7 +24,6 @@ function initMap() {
     center: centralPosition,
     streetViewControl: false,
   }
-
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   termCentral = new google.maps.Marker({
@@ -101,22 +100,20 @@ function initMap() {
 }
 
 function getPosition(id) {
-  $.ajax({
-    url: '/buscamapa.php',
-    type: 'GET',
-    dataType: 'jsonp',
-    data: { idLinha: id },
-    contentType: 'application/json; charset=utf-8',
-  }).done(function(response) {
-    var response = response.cordenadas.split('&');
+  var request = new XMLHttpRequest();
+  request.open('GET', 'buscamapa.php?idLinha='+id, true);
+  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  request.onload = function() {
+    if (this.status >= 200 && this.status < 400) {
+      var response = this.response.cordenadas.split('&');
 
-    if (response.length >= 5) {
-      clearMarkers(markers);
-      renderPosition(response);
-    } else {
-      console.log('error');
+      if (response.length >= 5) {
+        clearMarkers(markers);
+        renderPosition(response);
+      }
     }
-  });
+  };
+  request.send();
 }
 
 function getUserPosition() {
@@ -155,53 +152,54 @@ function renderPosition(response) {
 }
 
 function getRoutes(id) {
-  $.ajax({
-    url: '/buscalinhas.php',
-    type: 'GET',
-    dataType: 'jsonp',
-    data: { linha: id },
-    contentType: 'application/json; charset=utf-8',
-  }).done(function(response) {
-    $.each(response, function (index, record) {
-      var obj = response[index];
+  var request = new XMLHttpRequest();
+  request.open('GET', 'buscalinhas.php?linha='+id, true);
+  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  request.onload = function() {
+    if (this.status >= 200 && this.status < 400) {
+      var response = this.response;
+      response.forEach(function(index, record) {
+        var obj = response[index];
 
-      for (var key in obj) {
-        i = 0;
-        go = 0;
-        back = 0;
+        for (var key in obj) {
+          i = 0;
+          go = 0;
+          back = 0;
 
-        if (obj[key].Sentido == 0) {
-          if (key != go && key < obj.length) {
-            routesGo.push(new google.maps.LatLng(obj[key].Lat, obj[key].Lng));
+          if (obj[key].Sentido == 0) {
+            if (key != go && key < obj.length) {
+              routesGo.push(new google.maps.LatLng(obj[key].Lat, obj[key].Lng));
+            }
+            go = i + 1;
+          } else {
+            routesBack.push(new google.maps.LatLng(obj[key].Lat, obj[key].Lng));
+            back = i + 1;
           }
-          go = i + 1;
-        } else {
-          routesBack.push(new google.maps.LatLng(obj[key].Lat, obj[key].Lng));
-          back = i + 1;
+          i++;
         }
-        i++;
-      }
 
-      var polylineGo = new google.maps.Polyline({
-        path: routesGo,
-        strokeWeight: 3,
-        strokeOpacity: '1.0',
-        strokeColor: '#0000FF'
+        var polylineGo = new google.maps.Polyline({
+          path: routesGo,
+          strokeWeight: 3,
+          strokeOpacity: '1.0',
+          strokeColor: '#0000FF'
+        });
+        routesPath.push(polylineGo);
+
+        var polylineBack = new google.maps.Polyline({
+          strokeWeight: 3,
+          path: routesBack,
+          strokeOpacity: '1.0',
+          strokeColor: '#000000'
+        });
+        routesPath.push(polylineBack);
+
+        polylineGo.setMap(map);
+        polylineBack.setMap(map);
       });
-      routesPath.push(polylineGo);
-
-      var polylineBack = new google.maps.Polyline({
-        strokeWeight: 3,
-        path: routesBack,
-        strokeOpacity: '1.0',
-        strokeColor: '#000000'
-      });
-      routesPath.push(polylineBack);
-
-      polylineGo.setMap(map);
-      polylineBack.setMap(map);
-    });
-  });
+    }
+  };
+  request.send();
 }
 
 function clearMarkers(markers) {
