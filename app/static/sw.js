@@ -9,7 +9,12 @@ self.addEventListener('install', function(e) {
         '/components/item.html',
         '/components/main.html',
         '/assets/javascripts/application.js',
-        '/assets/stylesheets/application.css'
+        '/assets/stylesheets/application.css',
+        '/assets/fonts/MaterialIcons-Regular.eot',
+        '/assets/fonts/MaterialIcons-Regular.svg',
+        '/assets/fonts/MaterialIcons-Regular.ttf',
+        '/assets/fonts/MaterialIcons-Regular.woff',
+        '/assets/fonts/MaterialIcons-Regular.woff2'
       ]).then(function() {
         return self.skipWaiting();
       });
