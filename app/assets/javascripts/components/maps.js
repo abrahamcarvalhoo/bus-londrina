@@ -102,9 +102,9 @@ function initMap() {
 
 function getPosition(id) {
   $.ajax({
-    url: 'http://grandelondrina.rf.gd/buscamapa.php',
+    url: 'buscamapa.php',
     type: 'GET',
-    dataType: 'jsonp',
+    dataType: 'json',
     data: { idLinha: id },
     contentType: 'application/json; charset=utf-8',
   }).done(function(response) {
@@ -156,9 +156,9 @@ function renderPosition(response) {
 
 function getRoutes(id) {
   $.ajax({
-    url: 'http://grandelondrina.rf.gd/buscalinhas.php',
+    url: 'buscalinhas.php',
     type: 'GET',
-    dataType: 'jsonp',
+    dataType: 'json',
     data: { linha: id },
     contentType: 'application/json; charset=utf-8',
   }).done(function(response) {
